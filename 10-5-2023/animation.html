@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          width: 0;
+        }
+        100% {
+          opacity: 1;
+          width: 200px;
+          height: 300px;
+        }
+      }
+      img {
+        width: 200px;
+        height: 300px;
+        margin: 100px;
+        animation: fadeIn;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+      }
+      div {
+      }
+      .circle {
+        border-radius: 50%;
+        border: 10px solid gray;
+        width: 80px;
+        height: 80px;
+        background-color: blue;
+        animation: rotate;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(1800deg);
+        }
+      }
+
+      button {
+        background-color: orange;
+        width: 100px;
+        border-radius: 8px;
+        font-size: 24px;
+        margin: 20px;
+        transition-property: transform;
+        transition-duration: 1s;
+      }
+      button:hover {
+        transform: scale(1.2);
+      }
+      .cb1 {
+        accent-color: red; 
+        /* accent-color đổi màu check box sau khi nhấn */
+      }
+      .cb2 {
+        accent-color: blue;
+      }
+      .cb3 {
+        accent-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img
+        src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+        alt=""
+      />
+    </div>
+
+    <div class="circle"></div>
+
+    <button>submit</button>
+
+    <input type="checkbox" class="cb1" />
+    <input type="checkbox" class="cb2" />
+    <input type="checkbox" class="cb3" />
+  </body>
+</html>

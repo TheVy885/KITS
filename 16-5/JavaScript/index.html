@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./main.js"></script>
+
+    <div class="introduce">Hello world</div>
+    <div id="introduce">I am Devera</div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+      incidunt?
+    </p>
+
+    <button
+      onclick="myFunc()"
+      ondblclick="myFuncDoubleClick()"
+      onmousedown="myFuncMouseDown()"
+      onmouseup="myFuncMouseUp()"
+    >
+      OK
+    </button>
+    <div id="myName">My Name</div>
+
+    <input type="text" id="inputText" onchange="TextInput()" />
+    <script>
+      document.getElementById("introduce").style.color = "red";
+      const para = document.createElement("p");
+      document.body.appendChild(para);
+      document.querySelector("p").style.color = "pink";
+      document.querySelector("p").innerText = "abc";
+      //   function myFunc() {
+      //     document.querySelector("p").innerText = "abc";
+      //   }
+      // const cars=["Saab","Volvo","BMW"];
+      // let car=cars[0];
+      // let length=cars.length;
+      // cars.push("Mercedes");
+
+      // cars.pop();
+      // console.log(cars[3]);
+
+      function myFunc() {
+        const myName = document.getElementById("myName");
+        // console.log(myName);
+        myName.innerText = "KITS";
+      }
+      function myFuncDoubleClick() {
+        document.getElementById("myName").style.color = "red";
+      }
+      function myFuncMouseDown() {
+        document.getElementById("myName").style.color = "blue";
+      }
+
+      function myFuncMouseUp() {
+        document.getElementById("myName").style.color = "black";
+      }
+      function alert() {
+        alert("hello");
+      }
+      function TextInput() {
+        document.getElementById("inputText").style.color = "Green";
+        // document.getElementById("inputText").innerHTML="abc";
+        var x = document.getElementById("inputText").value;
+        console.log(x);
+      }
+
+      const students = [
+        "Tú",
+        "Khương",
+        "Quỳnh Anh",
+        "Nhất Anh",
+        "Tiến Anh",
+        "Đức Anh",
+      ];
+      var length = students.length;
+
+      console.log("Chiều dài của array student là: ", length);
+      const viTri = students.indexOf("Nhất Anh");
+      console.log(viTri); //vi tri cua nhat anh trong mang
+      const xoa = students.splice(0, 1); //xoa bo phan tu dau tien trong mang
+      //    console.log(xoa);    //phan tu bi xoa
+      console.log(students); //ket qua sau khi xoa
+      //   const new_students = students.join("-");
+
+      //   console.log(new_students);
+
+      const xoaQA = students.splice(1, 1);
+
+      console.log(students);
+
+      const students2 = ["Sơn Anh", "Phước"];
+
+      console.log(students.concat(students2));
+
+      console.log(Math.round(Math.random() * 100 + 1));
+
+
+    //   function randomOrg(min,max) => {
+    //     Math.round(Math.random() * 100 + 1)
+    //   }
+    </script>
+  </body>
+</html>

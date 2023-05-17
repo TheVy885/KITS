@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buoi2 BT3</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="stylesheet" href="./main.js" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="admin_page">
+      <div class="menu_admin">
+        <div class="header_menu_admin">
+          <ul>
+            <li>
+              <a href=""
+                ><img
+                  src="./images/avatar_school.svg"
+                  alt=""
+                  class="avatar_school"
+              /></a>
+            </li>
+            <li>
+              <a onclick="returnSetting()"
+                ><img src="./images/Home.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a onclick="returnSetting()"
+                ><img src="./images/Bell.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a onclick="returnSetting()"
+                ><img src="./images/Box.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a onclick="returnSetting()"
+                ><img src="./images/Stock.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a onclick="returnSetting()"
+                ><img src="./images/People.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer_menu_admin">
+          <div class="footer_menu_admin_item">
+            <img src="./images/Setting.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="menu_section">
+        <div class="back_site" onclick="returnSetting()">
+          <img src="./images/Back_arrow.svg" alt="" />
+          <h3>settings</h3>
+        </div>
+        <div class="body_menu_section">
+          <ul>
+            <li class="btn" onclick="addActive()">
+              <img src="./images/edit.svg" alt="" />
+              <!-- <i class="fa-solid fa-pencil"></i> -->
+              <h5>Edit profile</h5>
+            </li>
+            <li class="btn" onclick="">
+              <img src="./images/Bell2.svg" alt="" />
+              <h5>Notification</h5>
+            </li>
+            <li class="btn" onclick="">
+              <img src="./images/Lock.svg" alt="" />
+              <h5>Security</h5>
+            </li>
+            <li class="btn" onclick="">
+              <img src="./images/Setting2.svg" alt="" />
+              <h5>Appearance</h5>
+            </li>
+            <li class="btn" onclick="">
+              <img src="./images/Question.svg" alt="" />
+              <h5>Help</h5>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="detail_section">
+        <div class="header_detail_section">
+          <h1>Edit profile</h1>
+          <img src="./images/avatar_school.svg" alt="" />
+        </div>
+        <div class="body_detail_section">
+          <form action="" id="form_info" class="form_info" name="form_info">
+            <div class="form_detail_section">
+              <div class="form_name">
+                <div class="form_item">
+                  <label for="">First Name</label>
+                  <input
+                    type="text"
+                    name="first_name"
+                    id="first_name"
+                    placeholder="Luan"
+                  />
+                </div>
+                <div class="form_item">
+                  <label for="">Last Name</label>
+                  <input
+                    type="text"
+                    name="last_name"
+                    id="last_name"
+                    placeholder="Vuong"
+                  />
+                </div>
+              </div>
+              <div class="form_email">
+                <div class="form_item">
+                  <label for="">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="example@gmail.com"
+                    onchange="ValidateEmail(document.form_info.email)"
+                    ;
+                  />
+                  <input type="checkbox" name="" id="" />
+                </div>
+              </div>
+              <div class="form_address">
+                <div class="form_item">
+                  <label for="">Address</label>
+                  <input
+                    type="text"
+                    name="address"
+                    id="address"
+                    placeholder="33062 Zboncak isle"
+                  />
+                </div>
+              </div>
+              <div class="form_telephone">
+                <div class="form_item">
+                  <label for="">Contact Number</label>
+                  <input
+                    type="tel"
+                    name="telephone"
+                    id="telephone"
+                    placeholder="58077.79"
+                  />
+                </div>
+              </div>
+              <div class="form_city">
+                <div class="form_item">
+                  <label for="">City</label>
+                  <select name="city" id="city">
+                    <option value="HCM">Hồ Chí Minh</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form_button">
+                <input
+                  type="button"
+                  value="Cancel"
+                  class="btn_cancel"
+                  onclick="clearForm()"
+                />
+                <input
+                  type="submit"
+                  value="Save"
+                  class="btn_submit"
+                  onsubmit="checkForm()"
+                  onclick="checkForm()"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // id_FirstName = document.getElementById("first_name");
+      // id_LastName = document.getElementById("last_name");
+      // id_Email = document.getElementById("email");
+      // id_Address = document.getElementById("address");
+      // id_Telephone = document.getElementById("telephone");
+
+      function clearForm() {
+        //c1
+        // document.getElementById("first_name").value = "";
+        // document.getElementById("last_name").value = "";
+        // document.getElementById("email").value = "";
+        // document.getElementById("address").value = "";
+        // document.getElementById("telephone").value = "";
+
+        //c2
+        document.getElementById("form_info").reset();
+      }
+
+      // function closeSetting() {
+      //   document.querySelector(".menu_section").style["display"] = "none";
+      // }
+      function returnSetting() {
+        var divSetting = document.querySelector(".menu_section");
+        divSetting.classList.toggle("toggle");
+      }
+
+      function action() {
+        var divAction = document.querySelector(".body_menu_section");
+        divAction.classList.add("action");
+      }
+      function checkForm() {
+        var id_FirstName = document.getElementById("first_name");
+        var id_LastName = document.getElementById("last_name");
+        var id_Email = document.getElementById("email");
+        var id_Address = document.getElementById("address");
+        var id_Telephone = document.getElementById("telephone");
+        if (id_FirstName.value == "") {
+          id_FirstName.classList.add("alert-input");
+        }
+        if (id_LastName.value == "") {
+          id_LastName.classList.add("alert-input");
+        }
+        if (id_Email.value == "") {
+          id_Email.classList.add("alert-input");
+        }
+        if (id_Address.value == "") {
+          id_Address.classList.add("alert-input");
+        }
+        if (id_Telephone.value == "") {
+          id_Telephone.classList.add("alert-input");
+        }
+      }
+
+      function addActive() {
+        let header = document.querySelector(".body_menu_section");
+        let btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            console.log(current);
+            if (current.length > 0) {
+              current[0].className = current[0].className.replace(
+                " active",
+                ""
+              );
+            }
+            this.className += " active";
+          });
+        }
+      }
+
+      function ValidateEmail(inputText) {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (inputText.value.match(mailformat)) {
+          alert("Valid email address!");
+          console.log("valid email");
+          document.form_info.email.focus();
+          return true;
+        } else {
+          alert("You have entered an invalid email address!");
+          console.log("invalid email");
+          document.form_info.email.focus();
+          return false;
+        }
+      }
+
+      console.log(1 + 2 + "3");
+
+      ("use strict");
+
+      let bar = "bar";
+      console.log(foo());
+      function foo() {
+        return bar;
+      }
+      bar = "baz";
+    </script>
+  </body>
+</html>

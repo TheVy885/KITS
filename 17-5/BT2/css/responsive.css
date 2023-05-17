@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+    .menu_section{
+        display: none;
+    }
+
+    .detail_section .body_detail_section form .form_detail_section .form_name {
+        display: block;
+    }
+}

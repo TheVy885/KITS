@@ -79,19 +79,19 @@
               <p>Easiest way to healthy life buying your favorite plants</p>
             </div>
             <div class="btn_seemore">
-              <button><div>See more</div></button>
+              <button onclick="fetchData()"><div>See more</div></button>
               <img src="./images/icon_next.svg" alt="" />
             </div>
           </div>
   
           <div class="list_img_plants">
             <div class="grid-container">
-              <div class="grid-item">
-                <img src="./images/plants1.svg" alt="" />
+              <!-- <div class="grid-item"> -->
+                <!-- <img src="./images/plants1.svg" alt="" />
                 <div class="name_price">Natural Plants</div>
-                <div class="name_price">140.000đ</div>
-              </div>
-              <div class="grid-item">
+                <div class="name_price">140.000đ</div> -->
+              <!-- </div> -->
+              <!-- <div class="grid-item">
                 <img src="./images/plants2.svg" alt="" />
                 <div class="name_price">Artificial Plants</div>
                 <div class="name_price">900.000đ</div>
@@ -118,7 +118,7 @@
                 <img src="./images/plants6.svg" alt="" />
                 <div class="name_price">Artificial Plants</div>
                 <div class="name_price">900.000đ</div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -356,5 +356,46 @@
         </table>
       </div>
     </footer>
+
+    <script>
+
+
+
+      async function getAll() {
+  return fetch("https://fakestoreapi.com/products").then((res) => res.json());
+}
+
+async function fetchData() {
+  const products = await getAll();
+  console.log(products);
+
+  const productsDiv = document.querySelector(".grid-container");
+
+  for (let item of products) {
+    
+  
+    productsDiv.innerHTML += `
+    <div class="grid-item" onclick="goToDetail(1)">
+                <img src="${item.image}" alt="" />
+                <div class="name_price">${item.title}</div>
+                <div class="name_price">${item.price}</div>
+              </div>`;
+  }
+}
+
+document.querySelector(".grid-container").addEventListener("load",fetchData());
+
+// document.querySelector(".grid-container").onload=function(){fetchData()};
+
+const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id');
+    fetch(`https://fakestoreapi.com/products/${id})
+            .then(res=>res.json())
+            .then(json=>console.log(json)`);
+function goToDetail(id) {
+  window.location.assign(`details.html?id=${id}`);
+}
+    </script>
   </body>
 </html>

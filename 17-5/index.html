@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="email">
+    <script>
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue",
+      };
+      Object.keys(person);
+      console.log(Object.keys(person));
+
+      console.log(Object.values(person));
+
+      let txt = "DEVERA";
+      let length = txt.length;
+      console.log(txt.slice(0, 3)); //slice(vị trí bắt đầu, vị trí kết thúc(nhưng kết quả sẽ trc vị trí kết thúc 1 đơn vị))
+      console.log(txt.slice(3, 6)); // cắt từ vị trí thứ 3 tới vị trí thứ 5
+      console.log(txt.slice(3)); //cắt 3 phần tử cuối
+      console.log(txt.replace("DEV", "abc")); // thay đổi DEV thành abc, có phân biệt hoa thường
+      let text1 = "Hello world";
+
+      //BT1
+      let originalString = "Lop hoc web cua KITS";
+      //bt1
+      let length_string = originalString.length;
+      console.log("độ dài của chuỗi: ", length_string);
+
+      //bt2
+      let web = originalString.slice(8, 11);
+      console.log(web);
+
+      //bt3
+
+      console.log(originalString.replaceAll(" ", ",")); //replace là thay thế 1, replaceAll thay thế tất cả giá trị dc chọn có trong chuỗi
+      //bt4
+      //c1
+      const checkString = (stringA) => {
+        if (stringA.search(/Dev/) !== -1) {
+          console.log("Tồn tại!");
+        } else {
+          console.log("Ko tồn tại");
+        }
+      };
+
+      checkString("hello Dev!");
+      //c2
+      const isCheckString = (stringA, word) => {
+        return (check = stringA.includes(word)
+          ? console.log("có")
+          : console.log("ko"));
+      };
+
+      isCheckString("abcdef Dev", "dev");
+
+      //BT2
+      //bt1
+      const checkSNT = (n) => {
+        var flag = true;
+        if (n < 2) {
+          flag = false;
+        } else {
+          for (let i = 2; i <= n - 1; i++) {
+            if (n % i === 0) {
+              flag = false;
+              break;
+            }
+          }
+        }
+        if (flag == true) {
+          console.log(n + " là số nguyên tố");
+        } else {
+          console.log(n + " ko phải là số nguyên tố");
+        }
+      };
+      checkSNT(4);
+      //bt2
+      const totalN = (n) => {
+        let total = 0;
+        if (n > 0) {
+          for (let i = 1; i <= n; i++) {
+            total += i / n;
+          }
+          console.log("tổng của biểu thức là: ", total);
+        } else {
+          console.log("số n phải lớn hơn 0");
+        }
+      };
+
+      totalN(4);
+
+      //bt3
+      function checkEmail(){
+        idEmail=document.getElementById("email");
+        idEmail.check('@gmail')
+      }
+      
+    </script>
+  </body>
+</html>

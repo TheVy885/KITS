@@ -265,7 +265,9 @@ a {
   display: grid;
   grid-template-columns: auto auto auto;
 }
-.grid-container .gird_item img {
+.grid-container .grid-item img {
+  width: 230px;
+  height: 230px;
   margin-top: 30px;
 }
 .name_price {

@@ -395,6 +395,9 @@ const queryString = window.location.search;
             .then(json=>console.log(json)`);
 function goToDetail(id) {
   window.location.assign(`details.html?id=${id}`);
+  fetch('https://fakestoreapi.com/products/1')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
 }
     </script>
   </body>

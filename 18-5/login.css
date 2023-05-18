@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.body {
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  position: relative;
+}
+.login {
+  position: absolute;
+  width: 1248px;
+  height: 800px;
+  left: 130px;
+  top: 100px;
+  background-color: white;
+  border-radius: 22px;
+}
+.login-right {
+  position: absolute;
+  width: 348px;
+  height: 800px;
+  left: 1030px;
+  top: 100px;
+  border-radius: 22px;
+  background-color: #74c5f3;
+}
+.logo {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.logo img {
+  border-radius: 12px;
+  width: 100px;
+  height: 100px;
+}
+.login-form {
+  margin-top: 25px;
+  margin-left: 50px;
+
+  font-weight: 600;
+
+  letter-spacing: 0em;
+  text-align: left;
+  /* position: relative; */
+}
+.info {
+  padding-top: 22px;
+  padding-bottom: 10px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  /* font-weight: 300; */
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #000000;
+  position: relative;
+}
+
+.username {
+  width: 470px;
+  height: 46px;
+  background: #c0dbea;
+  border-radius: 4px;
+  padding-left: 12px;
+  padding-right: 20px;
+}
+.password {
+  width: 470px;
+  height: 46px;
+  background: #c0dbea;
+  border-radius: 4px;
+  padding-left: 12px;
+  padding-right: 20px;
+}
+.forgot-password {
+  position: absolute;
+  top: 372px;
+  left: 418px;
+  font-size: 16px;
+}
+.btn-login {
+  position: absolute;
+  left: 114px;
+  top: 246px;
+}
+.btn-login button {
+  background: #d885a3;
+  border-radius: 23px;
+  width: 150px;
+  height: 46px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn-login:hover{
+    cursor: pointer;
+}
+
+.or {
+  position: absolute;
+  left: 255px;
+  top: 564px;
+
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+a {
+  text-decoration: none;
+}
+
+.connect {
+  margin-left: 50px;
+  display: flex;
+  position: relative;
+  top: 160px;
+  left: 54px;
+}
+.social-media {
+  /* box-sizing: border-box; */
+
+  width: 125px;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #6096b4;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.social-media:hover{
+    cursor:pointer;
+}
+.social-media img {
+  /* display: flex; */
+  position: absolute;
+}
+.create-account {
+  display: flex;
+  padding-left: 132px;
+  padding-top: 184px;
+}
+.left {
+  padding-right: 15px;
+}
+.working {
+  position: absolute;
+  top: 212px;
+  right: 78px;
+}
+.login-right {
+  display: flex;
+  position: relative;
+}
+.cactus {
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  top: 250px;
+  right: 150px;
+}
+.cactus img {
+  width: 200px;
+  height: 500px;
+}

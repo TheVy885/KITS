@@ -14,6 +14,7 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
+    <script src="./login.js"></script>
   </head>
   <body>
     <div id="admin_page">
@@ -95,7 +96,11 @@
       <div class="detail_section">
         <div class="header_detail_section">
           <h1>Edit profile</h1>
-          <img src="./images/avatar_school.svg" alt="" />
+          <div class="btn-logout">
+            <img src="./images/avatar_school.svg" alt="" />
+
+            <button onclick="logOut()">Log Out</button>
+          </div>
         </div>
         <div class="body_detail_section">
           <form action="" id="form_info" class="form_info" name="form_info">
@@ -186,102 +191,107 @@
     </div>
 
     <script>
-      // id_FirstName = document.getElementById("first_name");
-      // id_LastName = document.getElementById("last_name");
-      // id_Email = document.getElementById("email");
-      // id_Address = document.getElementById("address");
-      // id_Telephone = document.getElementById("telephone");
+      var token = localStorage.getItem("token");
+      if (token == null || token == "") {
+        window.location.replace("./index.html");
+      } else {
+        // id_FirstName = document.getElementById("first_name");
+        // id_LastName = document.getElementById("last_name");
+        // id_Email = document.getElementById("email");
+        // id_Address = document.getElementById("address");
+        // id_Telephone = document.getElementById("telephone");
 
-      function clearForm() {
-        //c1
-        // document.getElementById("first_name").value = "";
-        // document.getElementById("last_name").value = "";
-        // document.getElementById("email").value = "";
-        // document.getElementById("address").value = "";
-        // document.getElementById("telephone").value = "";
+        function clearForm() {
+          //c1
+          // document.getElementById("first_name").value = "";
+          // document.getElementById("last_name").value = "";
+          // document.getElementById("email").value = "";
+          // document.getElementById("address").value = "";
+          // document.getElementById("telephone").value = "";
 
-        //c2
-        document.getElementById("form_info").reset();
-      }
-
-      // function closeSetting() {
-      //   document.querySelector(".menu_section").style["display"] = "none";
-      // }
-      function returnSetting() {
-        var divSetting = document.querySelector(".menu_section");
-        divSetting.classList.toggle("toggle");
-      }
-
-      function action() {
-        var divAction = document.querySelector(".body_menu_section");
-        divAction.classList.add("action");
-      }
-      function checkForm() {
-        var id_FirstName = document.getElementById("first_name");
-        var id_LastName = document.getElementById("last_name");
-        var id_Email = document.getElementById("email");
-        var id_Address = document.getElementById("address");
-        var id_Telephone = document.getElementById("telephone");
-        if (id_FirstName.value == "") {
-          id_FirstName.classList.add("alert-input");
+          //c2
+          document.getElementById("form_info").reset();
         }
-        if (id_LastName.value == "") {
-          id_LastName.classList.add("alert-input");
+
+        // function closeSetting() {
+        //   document.querySelector(".menu_section").style["display"] = "none";
+        // }
+        function returnSetting() {
+          var divSetting = document.querySelector(".menu_section");
+          divSetting.classList.toggle("toggle");
         }
-        if (id_Email.value == "") {
-          id_Email.classList.add("alert-input");
+
+        function action() {
+          var divAction = document.querySelector(".body_menu_section");
+          divAction.classList.add("action");
         }
-        if (id_Address.value == "") {
-          id_Address.classList.add("alert-input");
+        function checkForm() {
+          var id_FirstName = document.getElementById("first_name");
+          var id_LastName = document.getElementById("last_name");
+          var id_Email = document.getElementById("email");
+          var id_Address = document.getElementById("address");
+          var id_Telephone = document.getElementById("telephone");
+          if (id_FirstName.value == "") {
+            id_FirstName.classList.add("alert-input");
+          }
+          if (id_LastName.value == "") {
+            id_LastName.classList.add("alert-input");
+          }
+          if (id_Email.value == "") {
+            id_Email.classList.add("alert-input");
+          }
+          if (id_Address.value == "") {
+            id_Address.classList.add("alert-input");
+          }
+          if (id_Telephone.value == "") {
+            id_Telephone.classList.add("alert-input");
+          }
         }
-        if (id_Telephone.value == "") {
-          id_Telephone.classList.add("alert-input");
+
+        function addActive() {
+          let header = document.querySelector(".body_menu_section");
+          let btns = header.getElementsByClassName("btn");
+          for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+              var current = document.getElementsByClassName("active");
+              console.log(current);
+              if (current.length > 0) {
+                current[0].className = current[0].className.replace(
+                  " active",
+                  ""
+                );
+              }
+              this.className += " active";
+            });
+          }
         }
+
+        function ValidateEmail(inputText) {
+          var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (inputText.value.match(mailformat)) {
+            alert("Valid email address!");
+            console.log("valid email");
+            document.form_info.email.focus();
+            return true;
+          } else {
+            alert("You have entered an invalid email address!");
+            console.log("invalid email");
+            document.form_info.email.focus();
+            return false;
+          }
+        }
+
+        console.log(1 + 2 + "3");
+
+        ("use strict");
+
+        let bar = "bar";
+        console.log(foo());
+        function foo() {
+          return bar;
+        }
+        bar = "baz";
       }
-
-      function addActive() {
-        let header = document.querySelector(".body_menu_section");
-        let btns = header.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-          btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            console.log(current);
-            if (current.length > 0) {
-              current[0].className = current[0].className.replace(
-                " active",
-                ""
-              );
-            }
-            this.className += " active";
-          });
-        }
-      }
-
-      function ValidateEmail(inputText) {
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (inputText.value.match(mailformat)) {
-          alert("Valid email address!");
-          console.log("valid email");
-          document.form_info.email.focus();
-          return true;
-        } else {
-          alert("You have entered an invalid email address!");
-          console.log("invalid email");
-          document.form_info.email.focus();
-          return false;
-        }
-      }
-
-      console.log(1 + 2 + "3");
-
-      ("use strict");
-
-      let bar = "bar";
-      console.log(foo());
-      function foo() {
-        return bar;
-      }
-      bar = "baz";
     </script>
   </body>
 </html>

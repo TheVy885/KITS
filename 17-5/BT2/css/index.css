@@ -135,6 +135,12 @@ body {
   height: 120px;
 }
 
+.detail_section .header_detail_section .btn-logout{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .detail_section .body_detail_section form .form_detail_section {
   display: flex;
   flex-direction: column;

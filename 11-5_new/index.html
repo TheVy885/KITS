@@ -375,7 +375,7 @@ async function fetchData() {
     
   
     productsDiv.innerHTML += `
-    <div class="grid-item" onclick="goToDetail(1)">
+    <div class="grid-item" onclick="goToDetail(${item.id})">
                 <img src="${item.image}" alt="" />
                 <div class="name_price">${item.title}</div>
                 <div class="name_price">${item.price}</div>
@@ -395,9 +395,11 @@ const queryString = window.location.search;
             .then(json=>console.log(json)`);
 function goToDetail(id) {
   window.location.assign(`details.html?id=${id}`);
-  fetch('https://fakestoreapi.com/products/1')
+  fetch('https://fakestoreapi.com/products/${id}')
             .then(res=>res.json())
             .then(json=>console.log(json))
+
+
 }
     </script>
   </body>

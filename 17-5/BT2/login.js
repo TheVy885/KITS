@@ -69,6 +69,7 @@ function logOut() {
   // const token = localStorage.getItem("token");
   // localStorage.removeItem(token);
   localStorage.removeItem("token");
+
   console.log("success!");
   // console.log(token);
   window.location.assign("./login.html");

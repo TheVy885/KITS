@@ -103,7 +103,7 @@
           </div>
         </div>
         <div class="body_detail_section">
-          <form action="" id="form_info" class="form_info" name="form_info">
+          <form action="#" id="form_info" class="form_info" name="form_info" onsubmit="checkForm()">
             <div class="form_detail_section">
               <div class="form_name">
                 <div class="form_item">
@@ -180,8 +180,7 @@
                   type="submit"
                   value="Save"
                   class="btn_submit"
-                  onsubmit="checkForm()"
-                  onclick="checkForm()"
+                  
                 />
               </div>
             </div>
@@ -193,7 +192,7 @@
     <script>
       var token = localStorage.getItem("token");
       if (token == null || token == "") {
-        window.location.replace("./index.html");
+        window.location.replace("./login.html");
       } else {
         // id_FirstName = document.getElementById("first_name");
         // id_LastName = document.getElementById("last_name");

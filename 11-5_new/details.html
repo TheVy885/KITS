@@ -1,37 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>details</h1>
+    <link rel="stylesheet" href="./details.css" />
+    <script src="./details.js"></script>
+  </head>
+  <body>
+    <!-- <h1>details</h1> -->
+    <div class="wrapper">
+      <div class="header">
+        <div class="logo">LUAN SHOP</div>
+        <div class="mid">
+          <div>Sales</div>
+          <div>Product</div>
+          <div>About</div>
+          <div>More <img src="./images/icon_down_arrow.svg" alt="" /></div>
+        </div>
+        <div class="right-header">
+          <div class="input-search">
+            <img
+              src="./images/icon_search.svg"
+              alt=""
+              style="width: 14px; height: 14px"
+            /><input type="text" placeholder="Search...." />
+          </div>
+          <div class="cart">
+            <img
+              src="./images/icon_shopping_bag.svg"
+              alt=""
+              style="width: 16px; height: 16px"
+            />0
+          </div>
+          <div class="user"><img src="./images/icon_user1.svg" alt="" /></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="link">
+          <div>
+            HOME
+            <img
+              src="./images/icon_right_arrow.svg"
+              style="width: 14px; height: 14px"
+              alt=""
+            />
+          </div>
+          <div>
+            SALES
+            <img
+              src="./images/icon_right_arrow.svg"
+              style="width: 14px; height: 14px"
+            />
+          </div>
+          <div>HOODIE</div>
+        </div>
 
+        <div class="product">
+          <div class="product-left">
+            <img src="./images/product.svg" alt="" />
+          </div>
+          <div class="product-right">
+            <div class="name-product">
+              Plaid Sleeve Kangaroo Pocket Drawstring Hoodie
+              
+            </div>
+            <div class="by">
+              by <span style="color: #1565c0"> &emsp; Cosmo Fashion</span>
+            </div>
+            <div class="price">
+              <div class="real-price">
+                <img src="./images/icon_dollar.svg" alt="" />67
+              </div>
+              <div class="sale">
+                <div>
+                  Save 25% <br /><span style="color: #474747"
+                    >Inclusive deal of the day</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="description">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </div>
 
-</body>
-<script>
-         async function getAll() {
-  return fetch("https://fakestoreapi.com/products").then((res) => res.json());
-}
+            <button class="btn-add-to-cart">Add to Cart</button>
+          </div>
+        </div>
 
-async function fetchData() {
-  const products = await getAll();
-  console.log(products);
+        <div class="list-img">
+          <div class="img-product">
+            <img src="./images/product.svg" alt="" />
+          </div>
+          <div class="img-product">
+            <img src="./images/product.svg" alt="" />
+          </div>
+          <div class="img-product">
+            <img src="./images/product.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    async function getAll() {
+      return fetch("https://fakestoreapi.com/products").then((res) =>
+        res.json()
+      );
+    }
 
-  const productsDiv = document.querySelector(".grid-container");
+    async function fetchData() {
+      const products = await getAll();
+      console.log(products);
 
-  for (let item of products) {
-    
-  
-    productsDiv.innerHTML += `
-    <div class="grid-item" onclick="goToDetail(1)">
+      const productsDiv = document.querySelector(".grid-container");
+
+      for (let item of products) {
+        productsDiv.innerHTML += `
+    <div class="grid-item" onclick="goToDetail(${item.id})">
                 <img src="${item.image}" alt="" />
                 <div class="name_price">${item.title}</div>
                 <div class="name_price">${item.price}</div>
               </div>`;
-  }
-}
-</script>
+      }
+    }
+  </script>
 </html>
